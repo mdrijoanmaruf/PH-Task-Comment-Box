@@ -1,61 +1,71 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
   </head>
   <body>
     <section class="md:max-w-7xl mx-auto w-[94%]">
-        <div class=" grid md:grid-cols-2 gap-7 mt-6">
-            <div class="w-full mx-auto p-6 rounded-md shadow-lg  bg-blue-100">
-                <h1 class="text-3xl font-semibold text-green-600 text-center py-4">Comment Box</h1>
-                <div class="flex flex-col gap-4">
-                    <input  class="px-4 py-2 rounded-md text bg-white" placeholder="Enter your name" type="text" name="" id="name">
-                    <input class="px-4 py-2 rounded-md text bg-white"  type="email" name="" id="email" placeholder="Enter your email">
-                    <textarea class="px-4 py-2 rounded-md text bg-white"  name="" id="comment" cols="20" rows="10" placeholder="Enter your comment"></textarea>
-                </div>
-                <div class="flex justify-center">
-                    <button id="post" class="border mt-4 px-4 py-2 bg-green-600 text-white font-semibold rounded-md cursor-pointer">Post Comment</button>
-                </div>
-            </div>
-            <div id="parent" class="comment-container flex flex-col gap-4" >
-                <div>
-                    <div class=" px-3 py-4 rounded-md relative bg-gray-100 shadow-sm">
-                        <h2 class="text-[18px] font-semibold text-gray-600">Md Rijoan Maruf</h2>
-                        <p class="opacity-60">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero quisquam omnis odit praesentium! Quasi deleniti illum eius quae! Aliquam, quo.</p>
-                        <h3 class="text-green-800 mt-3">rijoanmaruf@gmail.com</h3>
-                        <i class="fa-solid fa-trash absolute right-3 bottom-3 cursor-pointer text-red-600"></i>
-                    </div>
-                </div>
-            </div>
+      <div class="grid md:grid-cols-2 gap-7 mt-6">
+        <div class="w-full mx-auto p-6 rounded-md shadow-lg bg-blue-100">
+          <h1 class="text-3xl font-semibold text-green-600 text-center py-4">
+            Comment Box
+          </h1>
+          <div class="flex flex-col gap-4">
+            <input
+              class="px-4 py-2 rounded-md text bg-white"
+              placeholder="Enter your name"
+              type="text"
+              name=""
+              id="name"
+            />
+            <input
+              class="px-4 py-2 rounded-md text bg-white"
+              type="email"
+              name=""
+              id="email"
+              placeholder="Enter your email"
+            />
+            <textarea
+              class="px-4 py-2 rounded-md text bg-white"
+              name=""
+              id="comment"
+              cols="20"
+              rows="10"
+              placeholder="Enter your comment"
+            ></textarea>
+          </div>
+          <div class="flex justify-center">
+            <button
+              id="post"
+              class="border mt-4 px-4 py-2 bg-green-600 text-white font-semibold rounded-md cursor-pointer"
+            >
+              Post Comment
+            </button>
+          </div>
         </div>
+        <div id="parent" class="comment-container flex flex-col gap-4">
+          <div>
+            <div class="px-3 py-4 rounded-md relative bg-gray-100 shadow-sm">
+              <h2 class="text-[18px] font-semibold text-gray-600">
+                Md Rijoan Maruf
+              </h2>
+              <p class="opacity-60">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+                quisquam omnis odit praesentium! Quasi deleniti illum eius quae!
+                Aliquam, quo.
+              </p>
+              <h3 class="text-green-800 mt-3">rijoanmaruf@gmail.com</h3>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    
-
-    <script>
-        document.getElementById('post')
-            .addEventListener('click' , function(){
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const comment = document.getElementById('comment').value;
-                
-                const newComment = document.createElement('div');
-                newComment.innerHTML = `
-                <div class=" px-3 py-4 rounded-md relative bg-gray-100 shadow-sm">
-                    <h2 class="text-[18px] font-semibold text-gray-600">${name}</h2>
-                    <p class="opacity-60">${comment}</p>
-                    <h3 class="text-green-800 mt-3">${email}</h3>
-                    <i class="fa-solid fa-trash absolute right-3 bottom-3 cursor-pointer text-red-600"></i>
-                    </div>
-                    `
-                
-                document.getElementById('parent').appendChild(newComment)
-                
-            })
-    </script>
     <script src="script.js"></script>
   </body>
 </html>
